@@ -29,13 +29,10 @@ namespace ToolbarItemBadgeSample
         {
             if(ToolbarItems.Count > 0)
             {
-                foreach(var t in ToolbarItems)
-                {
-                    DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, t, $"{e.NewValue}",Color.Red,Color.White);
-                }
+                DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems.First(), $"{e.NewValue}", Color.Red, Color.White);
             }
-              
-            
+
+
         }
     }
 }
