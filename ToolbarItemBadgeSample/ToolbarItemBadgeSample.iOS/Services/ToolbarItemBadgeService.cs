@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using CoreGraphics;
-using Foundation;
-using ToolbarItemBadgeSample.iOS.Services;
+﻿using ToolbarItemBadgeSample.iOS.Services;
 using ToolbarItemBadgeSample.Services;
-using UIKit;
 using Xamarin.Forms;
 using ToolbarItemBadgeSample.iOS.Utils;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ToolbarItemBadgeService))]
+[assembly: Dependency(typeof(ToolbarItemBadgeService))]
 namespace ToolbarItemBadgeSample.iOS.Services
 {
     public class ToolbarItemBadgeService : IToolbarItemBadgeService

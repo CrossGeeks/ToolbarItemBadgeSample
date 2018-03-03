@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.Animation;
-using Android.App;
-using Android.Content;
+﻿using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.Widget;
 using Android.Views;
-using Android.Widget;
-using Java.Lang;
-using static Android.App.ActionBar;
 
 namespace ToolbarItemBadgeSample.Droid
 {
@@ -121,6 +109,7 @@ namespace ToolbarItemBadgeSample.Droid
                 if (string.IsNullOrEmpty(text) || text == "0")
                 {
                     icon = lDrawable.GetDrawable(0);
+                    lDrawable.Dispose();
                 }
                 else
                 {
@@ -151,7 +140,6 @@ namespace ToolbarItemBadgeSample.Droid
 
             item.SetIcon(icon);
             icon.Dispose();
-            
         }
 
     }
