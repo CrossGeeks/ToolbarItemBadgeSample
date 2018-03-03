@@ -11,26 +11,28 @@ namespace ToolbarItemBadgeSample.iOS.Services
     {
         public void SetBadge(Page page, ToolbarItem item, string value,Color backgroundColor, Color textColor)
         {
-            var renderer = Platform.GetRenderer(page);
-            if (renderer == null)
+            Device.BeginInvokeOnMainThread(() =>
             {
-                renderer = Platform.CreateRenderer(page);
-                Platform.SetRenderer(page, renderer);
-            }
-            var vc = renderer.ViewController;
-
-            var rightButtomItems =vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
-            var idx = page.ToolbarItems.IndexOf(item);
-            if (rightButtomItems !=null && rightButtomItems.Length>idx)
-            {
-                var barItem = rightButtomItems[idx];
-                if (barItem != null)
+                var renderer = Platform.GetRenderer(page);
+                if (renderer == null)
                 {
-                    barItem.UpdateBadge(value,backgroundColor.ToUIColor(),textColor.ToUIColor());
+                    renderer = Platform.CreateRenderer(page);
+                    Platform.SetRenderer(page, renderer);
                 }
-            }
+                var vc = renderer.ViewController;
 
-           
+                var rightButtomItems = vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
+                var idx = page.ToolbarItems.IndexOf(item);
+                if (rightButtomItems != null && rightButtomItems.Length > idx)
+                {
+                    var barItem = rightButtomItems[idx];
+                    if (barItem != null)
+                    {
+                        barItem.UpdateBadge(value, backgroundColor.ToUIColor(), textColor.ToUIColor());
+                    }
+                }
+
+            });
         }
     }
 }
