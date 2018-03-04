@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ToolbarItemBadgeSample"
-             x:Class="ToolbarItemBadgeSample.MainPage">
+             x:Class="ToolbarItemBadgeSample.MainPage" Title="ToolbarItem Badge">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="icon" Text="Item 1" Priority="0" />
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="cart" Text="Item 1" Priority="0" />
     </ContentPage.ToolbarItems>
     <Stepper Value="0" Minimum="0" Maximum="99" Increment="1" HorizontalOptions="Center" VerticalOptions="Center" ValueChanged="Stepper_ValueChanged" />
 </ContentPage>
