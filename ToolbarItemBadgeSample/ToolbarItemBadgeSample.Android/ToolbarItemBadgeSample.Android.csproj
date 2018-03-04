@@ -89,12 +89,6 @@
     <AndroidResource Include="Resources\values\dimens.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_menu_notifications.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\bell.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\cart.png" />
   </ItemGroup>
   <Import Project="..\ToolbarItemBadgeSample\ToolbarItemBadgeSample.projitems" Label="Shared" />
