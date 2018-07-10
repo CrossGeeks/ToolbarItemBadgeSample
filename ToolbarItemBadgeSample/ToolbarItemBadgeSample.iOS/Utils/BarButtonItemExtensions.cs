@@ -118,12 +118,13 @@ namespace ToolbarItemBadgeSample.iOS.Utils
         {
             var bLayer = GetBadgeLayer(barButtonItem);
 
-            if (string.IsNullOrEmpty(text) || text == "0")
+            if (bLayer != null)
             {
-                bLayer?.RemoveFromSuperLayer();
-              
-                objc_setAssociatedObject(barButtonItem.Handle, BadgeKey.Handle, new CAShapeLayer().Handle, AssociationPolicy.ASSIGN);
-                return;
+                bLayer.Hidden = string.IsNullOrEmpty(text) || text == "0";
+                if (bLayer.Hidden)
+                {
+                    return;
+                }
             }
 
             var textLayer = bLayer?.Sublayers?.First(p => p is CATextLayer) as CATextLayer;
