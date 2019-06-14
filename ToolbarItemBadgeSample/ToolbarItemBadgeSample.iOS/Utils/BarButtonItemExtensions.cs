@@ -59,7 +59,7 @@ namespace ToolbarItemBadgeSample.iOS.Utils
                 return;
             }
 
-           CGPoint offset = CGPoint.Empty;
+            CGPoint offset = CGPoint.Empty;
 
             if (backgroundColor == null)
                 backgroundColor = UIColor.Red;
@@ -75,9 +75,7 @@ namespace ToolbarItemBadgeSample.iOS.Utils
             var bLayer = GetBadgeLayer(barButtonItem);
             bLayer?.RemoveFromSuperLayer();
 
-
             var badgeSize = text.StringSize(font);
-
 
             var height = badgeSize.Height;
             var width = badgeSize.Width + 2; /* padding */
@@ -91,29 +89,31 @@ namespace ToolbarItemBadgeSample.iOS.Utils
             //x position is offset from right-hand side
             var x = view.Frame.Width - width + offset.X;
 
-
             var badgeFrame = new CGRect(new CGPoint(x: x, y: offset.Y), size: new CGSize(width: width, height: height));
 
             bLayer = new CAShapeLayer();
             DrawRoundedRect(bLayer, badgeFrame, 7.0f, backgroundColor, filled);
             view.Layer.AddSublayer(bLayer);
 
-            // Initialiaze Badge's label
-            var label = new CATextLayer();
-            label.String = text;
-            label.AlignmentMode = CATextLayer.AlignmentCenter;
+	    // Initialiaze Badge's label
+	    var label = new CATextLayer
+	    {
+		String = text,
+		TextAlignmentMode = CATextLayerAlignmentMode.Center,
+		FontSize = font.PointSize,
+		Frame = badgeFrame,
+		ForegroundColor = filled ? textColor.CGColor : UIColor.White.CGColor,
+		BackgroundColor = UIColor.Clear.CGColor,
+		ContentsScale = UIScreen.MainScreen.Scale
+	    };
+
             label.SetFont(CGFont.CreateWithFontName(font.Name));
-            label.FontSize = font.PointSize;
-            label.Frame = badgeFrame;
-            label.ForegroundColor = filled ? textColor.CGColor : UIColor.White.CGColor;
-            label.BackgroundColor = UIColor.Clear.CGColor;
-            label.ContentsScale = UIScreen.MainScreen.Scale;
             bLayer.AddSublayer(label);
 
             // Save Badge as UIBarButtonItem property
             objc_setAssociatedObject(barButtonItem.Handle, BadgeKey.Handle, bLayer.Handle, AssociationPolicy.RETAIN_NONATOMIC);
-
         }
+
         public static void UpdateBadge(this UIBarButtonItem barButtonItem, string text, UIColor backgroundColor, UIColor textColor)
         {
             var bLayer = GetBadgeLayer(barButtonItem);
