@@ -21,11 +21,11 @@ namespace ToolbarItemBadgeSample.iOS.Services
                 }
                 var vc = renderer.ViewController;
 
-                var rightButtomItems = vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
+                var rightButtonItems = vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
                 var idx = page.ToolbarItems.IndexOf(item);
-                if (rightButtomItems != null && rightButtomItems.Length > idx)
+                if (rightButtonItems != null && rightButtonItems.Length > idx)
                 {
-                    var barItem = rightButtomItems[idx];
+                    var barItem = rightButtonItems[idx];
                     if (barItem != null)
                     {
                         barItem.UpdateBadge(value, backgroundColor.ToUIColor(), textColor.ToUIColor());
