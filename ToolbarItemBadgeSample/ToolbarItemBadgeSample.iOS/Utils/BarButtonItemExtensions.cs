@@ -128,7 +128,7 @@ namespace ToolbarItemBadgeSample.iOS.Utils
             }
 
             var textLayer = bLayer?.Sublayers?.First(p => p is CATextLayer) as CATextLayer;
-            if (textLayer != null)
+            if (textLayer != null && textLayer.String != "0")
             {
                     textLayer.String = text;
             }
