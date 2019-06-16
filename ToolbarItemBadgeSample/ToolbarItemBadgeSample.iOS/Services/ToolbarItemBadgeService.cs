@@ -21,11 +21,35 @@ namespace ToolbarItemBadgeSample.iOS.Services
                 }
                 var vc = renderer.ViewController;
 
-                var rightButtomItems = vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
-                var idx = page.ToolbarItems.IndexOf(item);
-                if (rightButtomItems != null && rightButtomItems.Length > idx)
+                var rightButtonItems = vc?.ParentViewController?.NavigationItem?.RightBarButtonItems;
+
+		// If we can't find the button where it typically is check the child view controllers
+		// as this is where MasterDetailPages are kept
+		if (rightButtonItems == null && vc.ChildViewControllerForHomeIndicatorAutoHidden != null)
+		    foreach (var uiObject in vc.ChildViewControllerForHomeIndicatorAutoHidden)
+                    {
+			string uiObjectType = uiObject.GetType().ToString();
+
+                        if (uiObjectType.Contains("FormsNav"))
+			{
+			    UIKit.UINavigationBar navobj = (UIKit.UINavigationBar)uiObject;
+
+			    if (navobj.Items != null)
+			        foreach (UIKit.UINavigationItem navitem in navobj.Items)
+				{
+                                    if (navitem.RightBarButtonItems != null)
+                                    {
+					rightButtonItems = navitem.RightBarButtonItems;
+					break;
+                                    }
+				}
+			}
+                    }
+
+		var idx = page.ToolbarItems.IndexOf(item);
+                if (rightButtonItems != null && rightButtonItems.Length > idx)
                 {
-                    var barItem = rightButtomItems[idx];
+                    var barItem = rightButtonItems[idx];
                     if (barItem != null)
                     {
                         barItem.UpdateBadge(value, backgroundColor.ToUIColor(), textColor.ToUIColor());
