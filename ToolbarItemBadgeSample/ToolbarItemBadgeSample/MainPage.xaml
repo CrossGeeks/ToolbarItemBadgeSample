@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:ToolbarItemBadgeSample"
              x:Class="ToolbarItemBadgeSample.MainPage" Title="ToolbarItem Badge">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="cart" Text="Item 1" Priority="0" />
+        <ToolbarItem Name="MenuItem1" Order="Primary" IconImageSource="cart.png" Text="Item 1" Priority="0" />
     </ContentPage.ToolbarItems>
     <Stepper Value="0" Minimum="0" Maximum="99" Increment="1" HorizontalOptions="Center" VerticalOptions="Center" ValueChanged="Stepper_ValueChanged" />
 </ContentPage>
