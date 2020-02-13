@@ -8,10 +8,21 @@ using Image = Windows.UI.Xaml.Controls.Image;
 
 namespace ToolbarItemBadgeSample.UWP.Utils
 {
+    /// <summary>
+    /// Represents extension class for AppBarButton, to draw badge
+    /// </summary>
     public static class AppBarButtonExtension
     {
         private const string BadgeValueOverflow = "*"; // text to display if the number is greater than 99
 
+        /// <summary>
+        /// Adds badge with text on app bar button
+        /// </summary>
+        /// <param name="appBarButton">App bar button to add badge</param>
+        /// <param name="item">Toolbar item</param>
+        /// <param name="value">Value to display</param>
+        /// <param name="backgroundColor">bBackground of badge</param>
+        /// <param name="textColor">Foreground text color of value</param>
         public static void AddBadge(this AppBarButton appBarButton, ToolbarItem item, string value, Color backgroundColor, Color textColor)
         {
             if (item.IconImageSource == null) return; // if icon is not specified in toolbar item return
@@ -21,7 +32,7 @@ namespace ToolbarItemBadgeSample.UWP.Utils
 
             var grid = new Grid(); // create new UWP grid
 
-            var image = new Image { Source = imagePlatform?.Control.Source, Stretch = Stretch.Fill, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch}; // create new UWP Image, and set the source to toolbar item's image source
+            var image = new Image { Source = imagePlatform?.Control.Source, Stretch = Stretch.Fill, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch }; // create new UWP Image, and set the source to toolbar item's image source
             Grid.SetColumn(image, 0); // get row for image control in grid
             Grid.SetRow(image, 0); // get column for image control in grid
             grid.Children.Add(image); // add image to grid
