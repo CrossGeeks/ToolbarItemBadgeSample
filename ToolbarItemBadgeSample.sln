@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolbarItemBadgeSample.iOS"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ToolbarItemBadgeSample", "ToolbarItemBadgeSample\ToolbarItemBadgeSample\ToolbarItemBadgeSample.shproj", "{713C3BF0-1A26-471F-8D43-B6EF1767FA04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolbarItemBadgeSample.UWP", "ToolbarItemBadgeSample.UWP\ToolbarItemBadgeSample.UWP.csproj", "{F73DD3C4-2D46-4FAA-A2AB-AEF25AC040A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolbarItemBadgeSample.UWP", "ToolbarItemBadgeSample\ToolbarItemBadgeSample.UWP\ToolbarItemBadgeSample.UWP.csproj", "{F73DD3C4-2D46-4FAA-A2AB-AEF25AC040A8}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -151,7 +151,7 @@ Global
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.AppStore|x64.ActiveCfg = AppStore|iPhone
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.AppStore|x86.ActiveCfg = AppStore|iPhone
-		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|ARM64.ActiveCfg = Debug|iPhoneSimulator
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|iPhone.ActiveCfg = Debug|iPhone
@@ -169,6 +169,10 @@ Global
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Release|x64.ActiveCfg = Release|iPhone
 		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Release|x86.ActiveCfg = Release|iPhone
+		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Ad-Hoc|Any CPU.Build.0 = Ad-Hoc|iPhone
+		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.AppStore|Any CPU.Build.0 = AppStore|iPhone
+		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{E17A2AD0-47C8-4456-8588-69F71B3A5E65}.Release|Any CPU.Build.0 = Release|iPhone
 		{F73DD3C4-2D46-4FAA-A2AB-AEF25AC040A8}.Ad-Hoc|Any CPU.ActiveCfg = Release|x64
 		{F73DD3C4-2D46-4FAA-A2AB-AEF25AC040A8}.Ad-Hoc|Any CPU.Build.0 = Release|x64
 		{F73DD3C4-2D46-4FAA-A2AB-AEF25AC040A8}.Ad-Hoc|Any CPU.Deploy.0 = Release|x64
